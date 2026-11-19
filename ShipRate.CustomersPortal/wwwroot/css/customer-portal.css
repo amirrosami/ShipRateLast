@@ -154,6 +154,11 @@ html[lang="fa"] button {
 
 /* Customer portal palette. Scope the theme to the signed-in layout. */
 body.portal-body {
+    --sta-navy: #12233f;
+    --sta-navy-light: #243e63;
+    --sta-orange: #ff8b3d;
+    --sta-orange-soft: #fff0e5;
+    --sta-orange-ink: #994114;
     --portal-ink: #17353e;
     --portal-accent: #096b67;
     --portal-accent-hover: #075550;
@@ -165,38 +170,62 @@ body.portal-body {
 }
 
 .portal-body .portal-sidebar {
-    background: linear-gradient(165deg, #173b4b, #102c36 70%);
+    background: linear-gradient(165deg, var(--sta-navy-light), var(--sta-navy) 70%);
 }
 
 .portal-body .sidebar-brand {
-    border-color: #42616a;
+    border-color: #425675;
     color: white;
 }
 
 .portal-body .brand-logo,
 .portal-body .user-avatar {
-    background: #176e72;
-    color: white;
+    background: var(--sta-orange);
+    color: var(--sta-navy);
 }
 
 .portal-body .sidebar-link {
-    color: #e2efef;
+    color: #edf2f9;
     border-radius: .6rem;
 }
 
-.portal-body .sidebar-link:is(:hover, :focus-visible, .active) {
+.portal-body .sidebar-link:is(:hover, :focus-visible, [aria-current="page"]) {
     color: white;
-    background: #285563;
+    background: var(--sta-navy-light);
+}
+
+.portal-body .sidebar-link[aria-current="page"] {
+    border-inline-start: 3px solid var(--sta-orange);
+    padding-inline-start: calc(1rem - 3px);
+}
+
+.portal-body .portal-sidebar .sidebar-link:focus-visible {
+    outline-color: var(--sta-orange);
+}
+
+.portal-body .sidebar-link:is(:hover, [aria-current="page"]) i {
+    color: var(--sta-orange);
 }
 
 .portal-body .portal-topbar {
+    --portal-ink: var(--sta-navy);
+    --portal-accent: var(--sta-orange-ink);
+    --portal-accent-hover: var(--sta-navy);
     background: #fff;
     border-bottom: 1px solid var(--portal-line);
     box-shadow: 0 2px 8px rgba(26, 59, 66, .04);
 }
 
 .portal-body .portal-main {
-    background: linear-gradient(180deg, #e9f1f2, #f5f7f8 22rem);
+    background: linear-gradient(180deg, #edf1f7, #f7f8fb 22rem);
+}
+
+.portal-body .portal-topbar .navbar-icon-btn {
+    color: var(--sta-navy);
+}
+
+.portal-body .portal-topbar .badge-dot {
+    background: var(--sta-orange);
 }
 
 .portal-body .portal-page-title,
