@@ -27,14 +27,6 @@ body {
     color: #1f2937;
 }
 
-html[lang="fa"] body,
-html[lang="fa"] input,
-html[lang="fa"] select,
-html[lang="fa"] textarea,
-html[lang="fa"] button {
-    font-family: 'Vazirmatn', Tahoma, sans-serif;
-}
-
 .portal-shell {
     min-height: 100vh;
     display: flex;

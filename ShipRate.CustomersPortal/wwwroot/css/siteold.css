@@ -1,5 +1,5 @@
 /* Global Styles */
-* {
+:where(html:not(:lang(fa))) * {
     font-family: 'Vazir', 'Tahoma', sans-serif;
 }
 
