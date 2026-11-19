@@ -1,0 +1,108 @@
+/* Loaded by ServiceRequest/Index. HTMX dialogs are mounted outside the page grid. */
+:is(.requests-page, .modal-content) {
+    --portal-ink: var(--sta-navy);
+    --portal-wash: #eef2f8;
+    --portal-line: #d5deeb;
+    --portal-accent: var(--sta-orange-ink);
+    --portal-accent-hover: var(--sta-navy);
+    --c-text: var(--sta-navy);
+    --c-muted: #50617a;
+    --c-raised: var(--portal-wash);
+    --c-surface: white;
+    --c-border: var(--portal-line);
+    --c-success: #216443;
+    --c-danger: #a12b38;
+    --c-warning: var(--sta-orange-ink);
+    color: var(--sta-navy);
+}
+
+.portal-body :is(.requests-page, .modal-content) .card-header,
+.portal-body :is(.requests-page, .modal-content) .modal-header {
+    background: var(--sta-navy);
+    color: white;
+    border-bottom: 2px solid var(--sta-orange);
+}
+:is(.requests-page, .modal-content) :is(.card-header, .modal-header) :is(h4, h5, h6, .nr-hint) { color: inherit; }
+:is(.requests-page, .modal-content) :is(.card-header, .modal-header) .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+:is(.requests-page, .modal-content) .card-header .text-muted { color: #dce6f2 !important; }
+:is(.requests-page, .modal-content) .card:is(.border-success, .border-info, .border-warning) { border-color: var(--portal-line) !important; }
+
+:is(.requests-page, .modal-content) :is(.card-footer, .modal-footer) { background-color: #f5f7fb; border-color: var(--portal-line); }
+:is(.requests-page, .modal-content) .table {
+    --bs-table-color: var(--sta-navy);
+    --bs-table-border-color: var(--portal-line);
+    --bs-table-striped-bg: #f4f7fb;
+    --bs-table-hover-bg: var(--sta-orange-soft);
+    --bs-table-hover-color: var(--sta-navy);
+}
+.portal-body :is(.requests-page, .modal-content) .table thead:is(.table-primary, .table-light) tr > th {
+    --bs-table-bg: var(--sta-navy-light);
+    background-color: var(--sta-navy-light);
+    color: white;
+    border-color: #425777;
+}
+.requests-page .table-responsive { overflow-x: auto; scrollbar-color: #8596ad #edf1f6; }
+.requests-page .sr-cell-num { color: var(--sta-navy); font-weight: 600; }
+.requests-page .badge.request-kind {
+    color: var(--sta-navy) !important;
+    background-color: #e7edf5;
+}
+:is(.requests-page, .modal-content) .page-link { color: var(--sta-navy); }
+:is(.requests-page, .modal-content) .page-item.active .page-link { color: var(--sta-navy); background: var(--sta-orange); border-color: var(--sta-orange); }
+:is(.requests-page, .modal-content) .page-item.disabled .page-link { color: #677589; }
+
+.portal-body :is(.requests-page, .modal-content) :is(.btn-primary, .btn-success, .btn-outline-success, .btn-warning) {
+    color: var(--sta-navy);
+    background: var(--sta-orange);
+    border-color: var(--sta-orange);
+}
+.portal-body :is(.requests-page, .modal-content) :is(.btn-primary, .btn-success, .btn-outline-success, .btn-warning):is(:hover, :focus-visible, :active) {
+    color: var(--sta-navy);
+    background: #ffad70;
+    border-color: #ffad70;
+}
+.portal-body :is(.requests-page, .modal-content) :is(.btn-secondary, .btn-outline-secondary, .btn-outline-primary) {
+    color: var(--sta-navy);
+    border-color: #8596ad;
+    background: white;
+}
+.portal-body :is(.requests-page, .modal-content) :is(.btn-secondary, .btn-outline-secondary, .btn-outline-primary):is(:hover, :focus-visible, :active) {
+    color: white;
+    border-color: var(--sta-navy-light);
+    background: var(--sta-navy-light);
+}
+.portal-body :is(.requests-page, .modal-content) :is(button, a):focus-visible {
+    outline: 2px solid var(--sta-orange-ink);
+    outline-offset: 2px;
+}
+
+.portal-body :is(.requests-page, .modal-content) :is(.form-control, .form-input, .form-textarea, .form-select):where(:not(:disabled, [readonly], .is-valid, .is-invalid, .input-validation-error)) {
+    color: var(--sta-navy);
+    background-color: white;
+    border-color: #8c9cb1;
+}
+.portal-body :is(.requests-page, .modal-content) :is(.form-control, .form-input, .form-textarea, .form-select):focus:where(:not(.is-valid, .is-invalid, .input-validation-error)) {
+    border-color: var(--sta-orange-ink);
+    box-shadow: 0 0 0 .18rem rgb(255 139 61 / 28%);
+}
+:is(.requests-page, .modal-content) :is(.form-control, .form-select):is(:disabled, [readonly]) { background-color: var(--portal-wash); }
+:is(.requests-page, .modal-content) .form-check-input:checked { background-color: var(--sta-navy); border-color: var(--sta-navy); }
+:is(.requests-page, .modal-content) .form-checkbox { accent-color: var(--sta-navy); }
+:is(.requests-page, .modal-content) :is(.form-error, .form-required, .field-validation-error) { color: var(--c-danger); }
+
+:is(.requests-page, .modal-content) .nav-tabs .nav-link { color: var(--sta-navy-light); }
+:is(.requests-page, .modal-content) .nav-tabs .nav-link.active {
+    color: var(--sta-navy);
+    background: var(--sta-orange-soft);
+    box-shadow: inset 0 -3px var(--sta-orange);
+}
+:is(.requests-page, .modal-content) .accordion-button:not(.collapsed),
+:is(.requests-page, .modal-content) .list-group-item-action:is(:hover, :focus) {
+    color: var(--sta-navy);
+    background: var(--sta-orange-soft);
+}
+:is(.requests-page, .modal-content) .alert-info { color: var(--sta-navy); background: var(--portal-wash); border-color: var(--portal-line); }
+:is(.requests-page, .modal-content) .excel-field > label { background: var(--portal-wash); color: var(--sta-navy); }
+:is(.requests-page, .modal-content) .excel-field .select2-container--bootstrap-5.select2-container--focus .select2-selection {
+    background-color: var(--sta-orange-soft) !important;
+}
