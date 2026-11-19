@@ -112,6 +112,10 @@
             }
     </style>
     @await RenderSectionAsync("Styles", required: false)
+    @if (isFa)
+    {
+        <link rel="stylesheet" href="~/css/persian-typography.css" asp-append-version="true" />
+    }
 </head>
 <body class="portal-body @(isFa ? "rtl-mode" : "ltr-mode")">
 
