@@ -1,0 +1,54 @@
+/* The list and the shared HTMX modal hosts live in different parts of the layout. */
+.portal-body :is(.requests-page, .modal-content) :is(.card-header, .modal-header):is(.bg-primary, .bg-info, .bg-success, .bg-light) {
+    background: var(--sta-navy) !important;
+    color: white;
+}
+.portal-body :is(.requests-page, .modal-content) :is(.card-header, .modal-header) > :is(h5, h6, span):not(.badge):is(.text-primary, .text-success, .text-secondary, .text-danger) {
+    color: white !important;
+}
+:is(.requests-page, .modal-content) .text-primary {
+    color: var(--sta-navy-light) !important;
+}
+:is(.requests-page, .modal-content) .spinner-border.text-primary {
+    color: var(--sta-orange-ink) !important;
+}
+:is(.requests-page, .modal-content) .input-group-text {
+    background-color: var(--portal-wash);
+    color: var(--sta-navy);
+}
+.modal-content .select2-container--focus .select2-selection,
+.modal-content .select2-container--open .select2-selection {
+    border-color: var(--sta-orange-ink);
+    outline: 2px solid var(--sta-orange);
+    outline-offset: 1px;
+}
+html:lang(fa) :is(.requests-page, .modal-content) .font-monospace {
+    font-family: var(--portal-persian-font) !important;
+}
+
+/* Shipment details use their own table and route markup. */
+.shipment-detail {
+    --blue-500: var(--sta-orange);
+    --blue-600: var(--sta-orange-ink);
+    --ink-soft: var(--sta-navy-light);
+    --ink-mute: #52647b;
+    --page: #f4f7fb;
+}
+.shipment-detail :is(.bl-table, .data) thead th {
+    background: var(--sta-navy-light);
+    color: white;
+    text-align: start;
+}
+.shipment-detail .data th { padding-block: .5rem; }
+.shipment-detail :is(.bl-table, .data) tbody tr:nth-child(even) { background: var(--page); }
+.shipment-detail :is(.bl-table, .data) tbody tr:hover { background: var(--sta-orange-soft); }
+.shipment-detail .badge-type { background: var(--sta-orange-soft); color: var(--sta-orange-ink); }
+.shipment-detail .table-actions :is(.btn-icon, .btn) { color: var(--sta-navy); }
+.shipment-detail .table-actions :is(.btn-icon, .btn):is(:hover, :focus-visible) {
+    background: var(--sta-orange-soft);
+    color: var(--sta-orange-ink);
+}
+.shipment-detail .node .line {
+    left: auto;
+    inset-inline-start: 50%;
+}

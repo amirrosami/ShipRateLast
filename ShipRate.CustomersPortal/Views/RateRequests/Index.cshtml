@@ -16,7 +16,7 @@
     ViewData["Title"] = $"{Localizer["RateRequests"]}";
 }
 
-<div class="container-fluid py-4">
+<div class="requests-page container-fluid py-4">
 
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
@@ -213,18 +213,7 @@
     </script>
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@section Styles {
+    <link rel="stylesheet" href="~/css/service-requests.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/rates-tracking.css" asp-append-version="true" />
+}
