@@ -1,4 +1,4 @@
-/* Loaded by ServiceRequest/Index. HTMX dialogs are mounted outside the page grid. */
+/* Shared by Service Requests, Rate Requests and Tracking. HTMX dialogs are mounted outside the page grid. */
 :is(.requests-page, .modal-content) {
     --portal-ink: var(--sta-navy);
     --portal-wash: #eef2f8;
@@ -35,7 +35,7 @@
     --bs-table-hover-bg: var(--sta-orange-soft);
     --bs-table-hover-color: var(--sta-navy);
 }
-.portal-body :is(.requests-page, .modal-content) .table thead:is(.table-primary, .table-light) tr > th {
+.portal-body :is(.requests-page, .modal-content) .table thead:is(.table-primary, .table-light, .table-dark, .table-secondary, :not([class])) tr > th {
     --bs-table-bg: var(--sta-navy-light);
     background-color: var(--sta-navy-light);
     color: white;
@@ -51,22 +51,22 @@
 :is(.requests-page, .modal-content) .page-item.active .page-link { color: var(--sta-navy); background: var(--sta-orange); border-color: var(--sta-orange); }
 :is(.requests-page, .modal-content) .page-item.disabled .page-link { color: #677589; }
 
-.portal-body :is(.requests-page, .modal-content) :is(.btn-primary, .btn-success, .btn-outline-success, .btn-warning) {
+.portal-body :is(.requests-page, .modal-content) :is(.btn-primary, .btn-success, .btn-outline-success, .btn-warning, .btn-info) {
     color: var(--sta-navy);
     background: var(--sta-orange);
     border-color: var(--sta-orange);
 }
-.portal-body :is(.requests-page, .modal-content) :is(.btn-primary, .btn-success, .btn-outline-success, .btn-warning):is(:hover, :focus-visible, :active) {
+.portal-body :is(.requests-page, .modal-content) :is(.btn-primary, .btn-success, .btn-outline-success, .btn-warning, .btn-info):is(:hover, :focus-visible, :active) {
     color: var(--sta-navy);
     background: #ffad70;
     border-color: #ffad70;
 }
-.portal-body :is(.requests-page, .modal-content) :is(.btn-secondary, .btn-outline-secondary, .btn-outline-primary) {
+.portal-body :is(.requests-page, .modal-content) :is(.btn-secondary, .btn-outline-secondary, .btn-outline-primary, .btn-outline-info, .btn-light) {
     color: var(--sta-navy);
     border-color: #8596ad;
     background: white;
 }
-.portal-body :is(.requests-page, .modal-content) :is(.btn-secondary, .btn-outline-secondary, .btn-outline-primary):is(:hover, :focus-visible, :active) {
+.portal-body :is(.requests-page, .modal-content) :is(.btn-secondary, .btn-outline-secondary, .btn-outline-primary, .btn-outline-info, .btn-light):is(:hover, :focus-visible, :active) {
     color: white;
     border-color: var(--sta-navy-light);
     background: var(--sta-navy-light);
