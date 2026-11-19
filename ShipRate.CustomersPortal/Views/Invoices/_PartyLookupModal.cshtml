@@ -1,9 +1,13 @@
-﻿<div class="modal-header">
+﻿@using System.Globalization
+@{
+    var dir = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
+}
+<div class="modal-header" dir="@dir">
     <h5 class="modal-title">Select Party</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 
-<div class="modal-body">
+<div class="modal-body" dir="@dir">
     <form hx-get="@Url.Action("PartyLookupList", "Invoices")"
           hx-target="#party-lookup-grid-container"
           hx-swap="innerHTML"
