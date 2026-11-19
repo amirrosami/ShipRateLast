@@ -1,8 +1,10 @@
-﻿@using ShipRate.Application.DTOs.Messaging
+﻿@using System.Globalization
+@using ShipRate.Application.DTOs.Messaging
 @model MessagingIndexViewModel
 
 @{
     ViewData["Title"] = "Messaging";
+    var dir = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
 
     var totalCount = Model.Conversations.Count;
     var unreadCount = Model.Conversations.Sum(x => x.UnreadCount);
@@ -10,10 +12,10 @@
         !string.Equals(x.StatusTitle, "Closed", StringComparison.OrdinalIgnoreCase));
 }
 
-<div class="container-fluid py-3 messaging-index" dir="ltr">
+<div class="requests-page messaging-page container-fluid py-3 messaging-index" dir="@dir">
     <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-3">
         <div>
-            <h1 class="h3 mb-1">Messaging</h1>
+            <h1 class="h3 mb-1 messaging-page-title">Messaging</h1>
             <div class="text-muted">Internal conversations</div>
         </div>
 
@@ -149,4 +151,10 @@
 
         });
     </script>
+}
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/service-requests.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/messaging-theme.css" asp-append-version="true" />
 }

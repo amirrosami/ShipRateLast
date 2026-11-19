@@ -1,12 +1,17 @@
-﻿@using ShipRate.Application.DTOs.Messaging
+﻿@using System.Globalization
+@using ShipRate.Application.DTOs.Messaging
 @model AddInternalParticipantViewModel
+@{
+    var dir = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
+}
 
 <form method="post"
       action="@Url.Action("AddParticipant", "Messaging")"
       hx-post="@Url.Action("AddParticipant", "Messaging")"
       hx-target="#conversationParticipantsHost"
       hx-swap="innerHTML"
-      hx-disabled-elt="button[type='submit']">
+      hx-disabled-elt="button[type='submit']"
+      dir="@dir">
     @Html.AntiForgeryToken()
 
     <input asp-for="ConversationId" type="hidden" />

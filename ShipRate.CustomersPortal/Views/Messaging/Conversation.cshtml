@@ -1,12 +1,12 @@
-﻿@using ShipRate.Application.DTOs.Messaging
+﻿@using System.Globalization
+@using ShipRate.Application.DTOs.Messaging
 @model MessagingConversationViewModel
 
 @{
     ViewData["Title"] = Model.Conversation?.Subject ?? "Conversation";
+    var dir = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
 }
-<link href="~/css/conversation.css" rel="stylesheet" />
-
-<div class="conversation-page" dir="ltr">
+<div class="conversation-page requests-page messaging-page" dir="@dir">
     <div class="conversation-layout">
 
         <div class="conversation-hero">
@@ -291,4 +291,11 @@
             }
         });
     </script>
+}
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/service-requests.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/conversation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/messaging-theme.css" asp-append-version="true" />
 }
