@@ -26,6 +26,8 @@
 }
 @{
     var culture = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    string? CurrentPage(string controller) => string.Equals(currentController, controller, StringComparison.OrdinalIgnoreCase) ? "page" : null;
     var isFa = culture == "fa";
     var lang = isFa ? "fa" : "en";
     var dir = isFa ? "rtl" : "ltr";
@@ -40,7 +42,7 @@
 
 
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#0d6efd">
+    <meta name="theme-color" content="#12233f">
 
     <!-- iOS support -->
     <link rel="apple-touch-icon" href="/icons/icon-192.png" />
@@ -126,47 +128,47 @@
             </div>
 
             <nav class="sidebar-nav">
-                <a asp-controller="Dashboard" asp-action="Index" class="sidebar-link">
+                <a asp-controller="Dashboard" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("Dashboard")">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>@Localizer["Dashboard"]</span>
                 </a>
-                <a asp-controller="RateRequests" asp-action="Index" class="sidebar-link">
+                <a asp-controller="RateRequests" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("RateRequests")">
                     <i class="fa-solid fa-box"></i>
                     <span>@Localizer["Orders"]</span>
                 </a>
-                <a asp-controller="Tracking" asp-action="Index" class="sidebar-link">
+                <a asp-controller="Tracking" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("Tracking")">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>@Localizer["Tracking"]</span>
                 </a>
 
-                <a asp-controller="ServiceRequest" asp-action="Index" class="sidebar-link">
+                <a asp-controller="ServiceRequest" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("ServiceRequest")">
                     <i class="fa-solid fa-file-circle-plus"></i>
                     <span>@Localizer["Requests"]</span>
                 </a>
-                <a asp-controller="Invoices" asp-action="Index" class="sidebar-link">
+                <a asp-controller="Invoices" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("Invoices")">
                     <i class="fa-solid fa-file-circle-plus"></i>
                     <span>@Localizer["Invoices"]</span>
                 </a>
-                <a asp-controller="OnlinePayment" asp-action="Index" class="sidebar-link">
+                <a asp-controller="OnlinePayment" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("OnlinePayment")">
                     <i class="fa-solid fa-file-circle-plus"></i>
                     <span>@Localizer["OnlinePayments"]</span>
                 </a>
 
-                <a asp-controller="PaymentDocuments" asp-action="Index" class="sidebar-link">
+                <a asp-controller="PaymentDocuments" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("PaymentDocuments")">
                     <i class="fa-solid fa-file-circle-plus"></i>
                     <span>@Localizer["PaymentDocuments"]</span>
                 </a>
 
-                <a asp-controller="Receipts" asp-action="Index" class="sidebar-link">
+                <a asp-controller="Receipts" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("Receipts")">
                     <i class="fa-solid fa-file-circle-plus"></i>
                     <span>@Localizer["Receipts"]</span>
                 </a>
 
-                <a asp-controller="Messaging" asp-action="Index" class="sidebar-link">
+                <a asp-controller="Messaging" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("Messaging")">
                     <i class="fa-solid fa-box"></i>
                     <span>@Localizer["Chat"]</span>
                 </a>
-                <a asp-controller="Commitments" asp-action="Index" class="sidebar-link">
+                <a asp-controller="Commitments" asp-action="Index" class="sidebar-link" aria-current="@CurrentPage("Commitments")">
                     <i class="fa-solid fa-file-circle-plus"></i>
                     <span>@Localizer["DownloadForms"]</span>
                 </a>
