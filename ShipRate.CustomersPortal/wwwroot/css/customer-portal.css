@@ -152,6 +152,12 @@ html[lang="fa"] button {
     }
 }
 
+@media (min-width: 992px) {
+    html:has(> body.portal-body) {
+        font-size: 93.75%;
+    }
+}
+
 /* Customer portal palette. Scope the theme to the signed-in layout. */
 body.portal-body {
     --sta-navy: #12233f;
