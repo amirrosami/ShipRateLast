@@ -148,18 +148,22 @@ body {
 }
 
 @media (min-width: 992px) {
-    html:has(> body.portal-body) {
+    html:has(> body:is(.portal-body, .login-page)) {
         font-size: 93.75%;
     }
 }
 
-/* Customer portal palette. Scope the theme to the signed-in layout. */
-body.portal-body {
+/* Brand colours shared by the customer portal and its sign-in page. */
+body.portal-body,
+body.login-page {
     --sta-navy: #12233f;
     --sta-navy-light: #243e63;
     --sta-orange: #ff8b3d;
     --sta-orange-soft: #fff0e5;
     --sta-orange-ink: #994114;
+}
+
+body.portal-body {
     --portal-ink: #17353e;
     --portal-accent: #096b67;
     --portal-accent-hover: #075550;
