@@ -151,3 +151,133 @@ html[lang="fa"] button {
         padding: .85rem;
     }
 }
+
+/* Customer portal palette. Scope the theme to the signed-in layout. */
+body.portal-body {
+    --portal-ink: #17353e;
+    --portal-accent: #096b67;
+    --portal-accent-hover: #075550;
+    --portal-line: #d4e2e3;
+    --portal-wash: #eff6f5;
+    --portal-shadow: 0 4px 18px rgba(26, 59, 66, .07);
+    background: #f1f5f6;
+    color: var(--portal-ink);
+}
+
+.portal-body .portal-sidebar {
+    background: linear-gradient(165deg, #173b4b, #102c36 70%);
+}
+
+.portal-body .sidebar-brand {
+    border-color: #42616a;
+    color: white;
+}
+
+.portal-body .brand-logo,
+.portal-body .user-avatar {
+    background: #176e72;
+    color: white;
+}
+
+.portal-body .sidebar-link {
+    color: #e2efef;
+    border-radius: .6rem;
+}
+
+.portal-body .sidebar-link:is(:hover, :focus-visible, .active) {
+    color: white;
+    background: #285563;
+}
+
+.portal-body .portal-topbar {
+    background: #fff;
+    border-bottom: 1px solid var(--portal-line);
+    box-shadow: 0 2px 8px rgba(26, 59, 66, .04);
+}
+
+.portal-body .portal-main {
+    background: linear-gradient(180deg, #e9f1f2, #f5f7f8 22rem);
+}
+
+.portal-body .portal-page-title,
+.portal-body .form-label {
+    color: var(--portal-ink);
+}
+
+.portal-body :is(.card, .card-clean, .stat-card, .panel-card, .modal-content) {
+    background-color: white;
+    border: 1px solid var(--portal-line);
+    border-radius: .875rem;
+    box-shadow: var(--portal-shadow);
+}
+
+.portal-body .dashboard .hero-card {
+    background: linear-gradient(115deg, #e1f2ed, #f7fbfa 80%);
+    border-color: var(--portal-line);
+}
+
+.portal-body .card-header:not([class*="bg-"]),
+.portal-body .modal-header:not([class*="bg-"]) {
+    background-color: var(--portal-wash);
+    color: var(--portal-ink);
+    border-bottom-color: var(--portal-line);
+    border-start-start-radius: inherit;
+    border-start-end-radius: inherit;
+}
+
+.portal-body .modal-footer {
+    background-color: #f7faf9;
+    border-color: var(--portal-line);
+    border-end-start-radius: inherit;
+    border-end-end-radius: inherit;
+}
+
+.portal-body :is(.form-control, .form-select):where(:not(:disabled, [readonly], .is-invalid, .is-valid, .input-validation-error)) {
+    background-color: #fcfefd;
+    border-color: #8fa7ac;
+    border-radius: .5rem;
+}
+
+.portal-body :is(.form-control, .form-select):focus:where(:not(.is-invalid, .is-valid, .input-validation-error)) {
+    border-color: var(--portal-accent);
+    box-shadow: 0 0 0 .2rem rgba(9, 107, 103, .18);
+}
+
+.portal-body .btn-primary {
+    color: white;
+    background: var(--portal-accent);
+    border-color: var(--portal-accent);
+}
+
+.portal-body .btn-primary:is(:hover, :active, :focus-visible) {
+    background: var(--portal-accent-hover);
+    border-color: var(--portal-accent-hover);
+}
+
+.portal-body .btn-outline-primary {
+    color: var(--portal-accent);
+    border-color: var(--portal-accent);
+}
+
+.portal-body .btn-outline-primary:is(:hover, :active, :focus-visible) {
+    color: white;
+    background-color: var(--portal-accent-hover);
+}
+
+.portal-body :is(.btn, .sidebar-link):focus-visible {
+    outline: 3px solid #3188a1;
+    outline-offset: 2px;
+}
+
+.portal-body .table {
+    --bs-table-border-color: var(--portal-line);
+    --bs-table-striped-bg: #f6f9fa;
+    --bs-table-hover-bg: #eaf4f2;
+}
+
+.portal-body .table thead:is(.table-primary, :not([class*="table-"])) th:not([class*="bg-"]) {
+    --bs-table-bg: #e5f0f0;
+    background-color: var(--bs-table-bg);
+    color: var(--portal-ink);
+    border-color: var(--portal-line);
+}
