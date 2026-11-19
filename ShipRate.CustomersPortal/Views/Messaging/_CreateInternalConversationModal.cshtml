@@ -1,5 +1,9 @@
-﻿@using ShipRate.Application.DTOs.Messaging
+﻿@using System.Globalization
+@using ShipRate.Application.DTOs.Messaging
 @model CreateInternalConversationViewModel
+@{
+    var dir = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
+}
 
 
 <form method="post"
@@ -7,7 +11,7 @@
       hx-post="@Url.Action("CreateInternal", "Messaging")"
       hx-target="#messagingModalHost"
       hx-swap="innerHTML"
-      dir="ltr">
+      dir="@dir">
     @Html.AntiForgeryToken()
 
     <div class="modal fade show d-block"
@@ -15,7 +19,7 @@
          role="dialog"
          style="z-index: 2000;">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content text-start">
+            <div class="modal-content text-start" dir="@dir">
                 <div class="modal-header">
                     <h5 class="modal-title">New Internal Conversation</h5>
 

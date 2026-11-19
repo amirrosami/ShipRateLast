@@ -1,0 +1,356 @@
+/* STA theme overrides for the Messaging / Chat module. */
+.messaging-page {
+    --sky-start: var(--sta-navy);
+    --sky-mid: var(--sta-navy-light);
+    --sky-end: var(--sta-navy);
+    --sky-deep: var(--sta-navy);
+    --sky-soft: var(--sta-orange-soft);
+    --sky-border: #d5deeb;
+    --text-main: var(--sta-navy);
+    --text-muted: #50617a;
+    --panel-white: #fff;
+    --shadow-soft: 0 12px 32px rgb(20 42 74 / 8%);
+    --shadow-card: 0 5px 18px rgb(20 42 74 / 6%);
+    color: var(--sta-navy);
+    font-family: inherit;
+}
+
+.messaging-page .messaging-page-title {
+    color: var(--sta-navy);
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.messaging-page .card,
+.messaging-page .inbox-card {
+    border: 1px solid #d5deeb !important;
+    border-radius: .85rem;
+    box-shadow: 0 4px 18px rgb(20 42 74 / 5%) !important;
+}
+
+.messaging-page .card-header {
+    color: var(--sta-navy);
+    background: #f5f7fb !important;
+    border-bottom: 1px solid #d5deeb !important;
+}
+
+.messaging-page .card-body {
+    color: var(--sta-navy);
+}
+
+.messaging-page.conversation-page {
+    min-height: calc(100vh - 20px);
+    background: #f4f6fa;
+    color: var(--sta-navy);
+}
+
+.messaging-page .conversation-hero {
+    background: #fff;
+    border: 1px solid #d5deeb;
+    border-radius: .9rem;
+    box-shadow: 0 5px 18px rgb(20 42 74 / 6%);
+    backdrop-filter: none;
+}
+
+.messaging-page .conversation-back {
+    color: var(--sta-navy);
+    background: #fff;
+    border-color: #9aa9bc;
+    border-radius: .55rem;
+}
+
+.messaging-page .conversation-back:hover {
+    color: var(--sta-navy);
+    background: var(--sta-orange-soft);
+    border-color: var(--sta-orange);
+    box-shadow: none;
+}
+
+.messaging-page .conversation-title {
+    color: var(--sta-navy);
+    font-weight: 750;
+}
+
+.messaging-page .conversation-meta .meta-pill {
+    color: var(--sta-navy);
+    background: var(--sta-orange-soft);
+    border-color: #f4c29f;
+}
+
+.messaging-page .chat-card,
+.messaging-page .sky-card {
+    background: #fff;
+    border: 1px solid #d5deeb;
+    border-radius: .9rem;
+    box-shadow: 0 5px 18px rgb(20 42 74 / 6%);
+    backdrop-filter: none;
+}
+
+.messaging-page .chat-card-header,
+.messaging-page .sky-card-header,
+.messaging-page #conversationParticipantsHost .card-header {
+    color: #fff;
+    background: var(--sta-navy) !important;
+    border: 0;
+    border-bottom: 2px solid var(--sta-orange);
+}
+
+.messaging-page .chat-card-header::after {
+    background: rgb(255 255 255 / 7%);
+}
+
+.messaging-page .chat-card-body {
+    background: #f5f7fb;
+}
+
+.messaging-page .chat-card-footer {
+    background: #fff;
+    border-top: 1px solid #d5deeb;
+}
+
+.messaging-page .conversation-messages::-webkit-scrollbar-thumb {
+    background: var(--sta-navy-light);
+}
+
+.messaging-page .chat-card-footer textarea.form-control,
+.messaging-page .chat-card-footer input.form-control,
+.messaging-page .sky-card-body .form-select,
+.messaging-page .sky-card-body .form-control {
+    color: var(--sta-navy);
+    background: #fff;
+    border: 1px solid #9aa9bc;
+    border-radius: .55rem;
+    box-shadow: none;
+}
+
+.messaging-page .chat-card-footer textarea.form-control:focus,
+.messaging-page .chat-card-footer input.form-control:focus,
+.messaging-page .sky-card-body .form-select:focus,
+.messaging-page .sky-card-body .form-control:focus {
+    border-color: var(--sta-orange-ink);
+    box-shadow: 0 0 0 .18rem rgb(255 139 61 / 28%);
+}
+
+.messaging-page .chat-card-footer .btn-primary,
+.messaging-page .sky-card-body .btn-primary,
+.messaging-page .send-message-btn {
+    color: var(--sta-navy) !important;
+    background: var(--sta-orange) !important;
+    border: 1px solid var(--sta-orange) !important;
+    box-shadow: none !important;
+}
+
+.messaging-page .chat-card-footer .btn-primary:hover,
+.messaging-page .sky-card-body .btn-primary:hover,
+.messaging-page .send-message-btn:hover {
+    color: var(--sta-navy) !important;
+    background: #ffad70 !important;
+    border-color: #ffad70 !important;
+}
+
+.messaging-page .send-message-shell {
+    background: #f5f7fb;
+    border: 1px solid #d5deeb;
+    border-radius: .8rem;
+    box-shadow: none;
+}
+
+.messaging-page .send-message-label,
+.messaging-page .chat-sender {
+    color: var(--sta-navy);
+}
+
+.messaging-page .send-message-textarea {
+    color: var(--sta-navy) !important;
+    background: #fff !important;
+    border: 1px solid #9aa9bc !important;
+    border-radius: .55rem !important;
+    box-shadow: none !important;
+}
+
+.messaging-page .send-message-textarea:focus {
+    border-color: var(--sta-orange-ink) !important;
+    box-shadow: 0 0 0 .18rem rgb(255 139 61 / 28%) !important;
+}
+
+.messaging-page .attachment-picker-btn {
+    color: var(--sta-navy);
+    border-color: #9aa9bc;
+    background: #fff;
+}
+
+.messaging-page .attachment-picker-btn:hover {
+    color: var(--sta-navy);
+    border-color: var(--sta-orange);
+    background: var(--sta-orange-soft);
+}
+
+.messaging-page .selected-file-chip {
+    color: var(--sta-navy);
+    background: var(--sta-orange-soft);
+    border-color: #f4c29f;
+}
+
+.messaging-page .chat-item.mine .chat-bubble {
+    color: var(--sta-navy);
+    background: #fff0e5;
+    border-color: #f4c29f;
+}
+
+.messaging-page .chat-item.theirs .chat-bubble {
+    color: var(--sta-navy);
+    background: #fff;
+    border-color: #d5deeb;
+}
+
+.messaging-page .chat-text {
+    color: inherit;
+}
+
+.messaging-page .conversation-empty-icon {
+    color: var(--sta-navy);
+    background: var(--sta-orange-soft);
+    border-color: #f4c29f;
+    box-shadow: none;
+}
+
+.messaging-page .conversation-empty-title {
+    color: var(--sta-navy);
+}
+
+.messaging-page .conversation-empty-text {
+    color: #50617a;
+}
+
+.messaging-page #conversationParticipantsHost .card {
+    border: 1px solid #d5deeb;
+    border-radius: .85rem;
+    box-shadow: 0 5px 18px rgb(20 42 74 / 6%);
+}
+
+.messaging-page #conversationParticipantsHost .card-body,
+.messaging-page #conversationParticipantsHost .list-group,
+.messaging-page #conversationParticipantsHost .list-group-item {
+    color: var(--sta-navy);
+    background: #fff;
+}
+
+.messaging-page #conversationParticipantsHost .list-group-item {
+    border-color: #e4eaf2;
+}
+
+.messaging-page .conversation-item {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    padding: 16px;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+
+.messaging-page .conversation-item:hover {
+    background: #f5f7fb;
+}
+
+.messaging-page .conversation-unread {
+    background: #fff7f0;
+    border-left-color: var(--sta-orange);
+}
+
+.messaging-page .conversation-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: .7rem;
+    background: var(--sta-orange-soft);
+    color: var(--sta-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.messaging-page .conversation-subject {
+    color: var(--sta-navy);
+    font-weight: 700;
+    max-width: 520px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.messaging-page .conversation-meta {
+    margin-top: 6px;
+    color: #50617a;
+    font-size: 13px;
+}
+
+.messaging-page .conversation-time {
+    color: var(--sta-navy);
+    font-size: 12px;
+    white-space: nowrap;
+    text-align: end;
+}
+
+.messaging-page .conversation-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 92px;
+}
+
+.messaging-page .separator {
+    color: #9aa9bc;
+    margin: 0 4px;
+}
+
+.messaging-page .min-w-0 {
+    min-width: 0;
+}
+
+.messaging-page .details-list dt {
+    color: #50617a;
+}
+
+.messaging-page .details-list dd {
+    color: var(--sta-navy);
+}
+
+.messaging-page[dir="rtl"] .conversation-item {
+    border-left: 0;
+    border-right: 4px solid transparent;
+}
+
+.messaging-page[dir="rtl"] .conversation-unread {
+    border-right-color: var(--sta-orange);
+}
+
+.messaging-page[dir="rtl"] .chat-text {
+    text-align: right;
+}
+
+.messaging-page[dir="ltr"] .chat-text {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .messaging-page .conversation-item {
+        grid-template-columns: 44px minmax(0, 1fr);
+    }
+
+    .messaging-page .conversation-actions {
+        grid-column: 2;
+        justify-content: flex-start;
+        margin-top: 8px;
+    }
+
+    .messaging-page[dir="rtl"] .conversation-time {
+        text-align: right;
+    }
+
+    .messaging-page[dir="ltr"] .conversation-time {
+        text-align: left;
+    }
+}

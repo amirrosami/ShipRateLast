@@ -1,5 +1,9 @@
-﻿@using ShipRate.Application.DTOs.Messaging
+﻿@using System.Globalization
+@using ShipRate.Application.DTOs.Messaging
 @model SendInternalMessageViewModel
+@{
+    var dir = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
+}
 
 <form method="post"
       action="@Url.Action("SendMessage", "Messaging")"
@@ -11,7 +15,7 @@
       hx-encoding="multipart/form-data"
       id="messageForm"
       class="send-message-form"
-      dir="ltr">
+      dir="@dir">
 
     @Html.AntiForgeryToken()
 
