@@ -1,0 +1,34 @@
+﻿@using ShipRate.Application.DTOs
+@model DepositCreditReturnRequestEditVm
+
+<div class="modal-header">
+    <h5 class="modal-title">
+        @(Model.Header?.Model?.Id != null ? "Edit Deposit/Credit Return Request" : "New Deposit/Credit Return Request")
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body">
+    <div id="dcr-header-form-container">
+        @await Html.PartialAsync("_DepositCreditReturnHeaderForm", Model)
+    </div>
+
+    @* @if (Model.HeaderSaved)
+    {
+        <hr class="my-3" />
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="mb-0">Payment Documents</h6>
+        </div>
+
+        <div id="dcr-items-container">
+            @await Html.PartialAsync("_DepositCreditReturnItems", Model)
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info mt-3 mb-0">
+            Save request header first, then select payment documents.
+        </div>
+    } *@
+</div>

@@ -1,0 +1,197 @@
+﻿@using ShipRate.Application.DTOs
+@model DepositCreditReturnDtl
+
+<style>
+    .excel-grid {
+        display: grid;
+        gap: 0;
+        border: 1px solid #d1d9e0;
+    }
+
+    .excel-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .excel-field {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        border: 0.5px solid #d1d9e0;
+        background: #fff;
+        padding: 3px 6px;
+        position: relative;
+        width: 100%;
+    }
+
+        .excel-field > label {
+            width: 130px;
+            min-width: 130px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+            white-space: nowrap;
+            background: #eef6ff;
+            padding: 5px 8px;
+            border-radius: 3px;
+            text-align: start;
+            flex-shrink: 0;
+        }
+
+    .excel-input-wrap {
+        flex: 1 1 auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 6px;
+    }
+
+    .excel-field input, .excel-field select, .excel-field textarea {
+        width: 100% !important;
+        font-size: 14px !important;
+        padding: 4px 8px;
+    }
+
+    .excel-field.span-2 {
+        grid-column: span 2;
+    }
+
+    .excel-field.span-3 {
+        grid-column: span 3;
+    }
+
+    .excel-field span.text-danger {
+        position: absolute;
+        bottom: -6px;
+        right: 6px;
+        font-size: 11px;
+        background: #fff;
+        padding: 0 4px;
+        border-radius: 2px;
+        white-space: nowrap;
+        z-index: 2;
+    }
+
+    .excel-field .select2-container--bootstrap-5 {
+        flex: 1;
+        width: 100% !important;
+    }
+
+        .excel-field .select2-container--bootstrap-5 .select2-selection {
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            height: 100% !important;
+            display: flex;
+            align-items: center;
+        }
+
+        .excel-field .select2-container--bootstrap-5.select2-container--focus .select2-selection {
+            background-color: #fff9c4 !important; /* فوکوس زرد مشابه سایر اینپوت‌های فرم شما */
+        }
+</style>
+
+<form hx-post="@Url.Action("SaveDepositCreditReturn", "ServiceRequest")"
+      hx-target="#detail-form"
+      hx-swap="innerHTML"
+      dir="ltr"
+      hx-include="#ServiceRequestId"
+      hx-on::config-request="
+          const srvReqId = document.getElementById('ServiceRequestId')?.value;
+          if (!srvReqId || srvReqId.trim() === '' || srvReqId === '00000000-0000-0000-0000-000000000000') {
+              event.preventDefault();
+              createToast('First Save Request Master Info', 'danger');
+          }
+      ">
+    @Html.AntiForgeryToken()
+
+        
+        <input type="hidden" asp-for="Id" />
+    
+
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+    @if (Model.HeaderSaved)
+    {
+        <hr class="my-3" />
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="mb-0">Payment Documents</h6>
+        </div>
+
+        <div id="dcr-items-container">
+            <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th style="width:60px;" class="text-center">Select</th>
+                            <th style="width:180px;">Document No</th>
+                            <th style="width:180px;">Payment Method</th>
+                            <th style="width:140px;" class="text-end">Amount</th>
+                            <th style="width:140px;" class="text-end">AllocatedAmount</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.SelectedDocuments != null && Model.SelectedDocuments.Any())
+                        {
+                            for (int i = 0; i < Model.SelectedDocuments.Count; i++)
+                            {
+                                // برای نمایش ستون‌ها (DocumentNo/Amount) از PaymentDocuments هم استفاده می‌کنیم
+                                var docId = Model.SelectedDocuments[i].PaymentDocumentId;
+
+                                <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               asp-for="SelectedDocuments[@i].IsSelected" />
+
+                                        <input type="hidden" asp-for="SelectedDocuments[@i].PaymentDocumentId" />
+                                        <input type="hidden" asp-for="SelectedDocuments[@i].ServiceRequestId" />
+                                    </td>
+
+                                    <td>@(Model.SelectedDocuments[i].DocumentNo)</td>
+                                    <td>@(Model.SelectedDocuments[i].PaymentMethod)</td>
+
+                                    <td class="text-end">@Model.SelectedDocuments[i].Amount.ToString("N2"))</td>
+                                    <td class="text-end">@Model.SelectedDocuments[i].AllocatedAmount.ToString("N2"))</td>
+                                    <td>
+                                        <input asp-for="SelectedDocuments[@i].Remarks"
+                                               class="form-control form-control-sm"
+                                               placeholder="Remarks..." />
+                                    </td>
+                                </tr>
+                            }
+
+
+                        }
+
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center text-muted">
+                                    No payment documents found.
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end gap-2 mt-3">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success btn-sm px-3">Save Selected Items</button>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info mt-3 mb-0">
+            Save request header first, then select payment documents.
+        </div>
+    }
+    
+</form>
+
