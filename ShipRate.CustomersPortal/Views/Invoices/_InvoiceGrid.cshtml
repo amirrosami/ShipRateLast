@@ -12,31 +12,9 @@
     var dir = isFa ? "rtl" : "ltr";
 }
 
-<style>
-    .btn-xs {
-        padding: 0.15rem 0.4rem;
-        font-size: 1rem;
-        line-height: 1;
-    }
-
-    .invoice-check,
-    #selectAllInvoices {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
-
-    .table-responsive {
-        overflow-x: scroll !important;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* ... Keep your existing scrollbar styles ... */
-</style>
-
 <div class="card" dir="@dir">
-    <div class="table-responsive">
-        <table class="table table-hover table-striped mb-0" id="invoiceTable">
+    <div class="table-responsive finance-table-responsive">
+        <table class="table table-hover table-striped mb-0 finance-data-table" id="invoiceTable">
             <thead class="table-primary">
                 <tr>
                     <th>

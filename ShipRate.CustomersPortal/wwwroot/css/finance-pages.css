@@ -1,0 +1,161 @@
+/* STA finance pages: shared visual language for Invoices, Online Payments and Payment Documents. */
+.finance-page {
+    color: var(--sta-navy);
+}
+
+.finance-page .finance-page-title {
+    color: var(--sta-navy);
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.finance-page .card {
+    border: 1px solid #d5deeb;
+    border-radius: .8rem;
+    box-shadow: 0 4px 18px rgb(20 42 74 / 5%);
+}
+
+.finance-page .card-body {
+    color: var(--sta-navy);
+}
+
+.finance-page .card-footer {
+    border-top: 1px solid #d5deeb;
+}
+
+.finance-page .finance-table-responsive,
+.modal-content .finance-table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #8596ad #edf1f6;
+}
+
+.finance-page .finance-table-responsive::-webkit-scrollbar,
+.modal-content .finance-table-responsive::-webkit-scrollbar {
+    height: 9px;
+}
+
+.finance-page .finance-table-responsive::-webkit-scrollbar-track,
+.modal-content .finance-table-responsive::-webkit-scrollbar-track {
+    background: #edf1f6;
+    border-radius: 999px;
+}
+
+.finance-page .finance-table-responsive::-webkit-scrollbar-thumb,
+.modal-content .finance-table-responsive::-webkit-scrollbar-thumb {
+    background: #8596ad;
+    border-radius: 999px;
+}
+
+.finance-page .finance-data-table,
+.modal-content .finance-data-table {
+    width: 100%;
+    margin-bottom: 0;
+    color: var(--sta-navy);
+    vertical-align: middle;
+}
+
+.finance-page .finance-data-table thead th,
+.modal-content .finance-data-table thead th {
+    padding: .8rem .75rem;
+    color: white;
+    background: var(--sta-navy-light);
+    border-color: #425777;
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 1.45;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.finance-page .finance-data-table tbody td,
+.modal-content .finance-data-table tbody td {
+    padding: .7rem .75rem;
+    border-color: #e4eaf2;
+    vertical-align: middle;
+}
+
+.finance-page .finance-data-table tbody tr:hover,
+.modal-content .finance-data-table tbody tr:hover {
+    background: var(--sta-orange-soft);
+}
+
+.finance-page .finance-data-table .text-end,
+.modal-content .finance-data-table .text-end {
+    font-variant-numeric: tabular-nums;
+}
+
+.finance-page :is(.invoice-check, #selectAllInvoices) {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: var(--sta-orange-ink);
+    cursor: pointer;
+}
+
+.finance-page .finance-total-card {
+    background: #f5f7fb;
+    border-color: #d5deeb;
+}
+
+.finance-page .finance-total-card .form-control {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.finance-page .finance-detail-grid > div {
+    padding: .75rem;
+    border: 1px solid #d5deeb;
+    border-radius: .6rem;
+    background: #fff;
+    overflow-wrap: anywhere;
+}
+
+.finance-page .finance-detail-grid strong {
+    display: block;
+    margin-bottom: .25rem;
+    color: var(--sta-navy-light);
+    font-size: .82rem;
+}
+
+.finance-page .finance-detail-grid strong + div {
+    color: var(--sta-navy);
+}
+
+.finance-page .finance-result-card {
+    overflow: hidden;
+    border: 1px solid #d5deeb !important;
+    border-radius: 1rem;
+    box-shadow: 0 12px 32px rgb(20 42 74 / 9%) !important;
+}
+
+.finance-page .finance-result-meta {
+    background: #f5f7fb !important;
+    border-color: #d5deeb !important;
+}
+
+.finance-page .finance-result-meta strong {
+    color: var(--sta-navy);
+    font-variant-numeric: tabular-nums;
+}
+
+.finance-page .finance-result-card .btn {
+    min-width: 120px;
+}
+
+@media (max-width: 767.98px) {
+    .finance-page .finance-page-title {
+        font-size: 1.25rem;
+    }
+
+    .finance-page .finance-data-table,
+    .modal-content .finance-data-table {
+        min-width: 680px;
+    }
+
+    .finance-page .card-footer {
+        gap: .75rem;
+        flex-wrap: wrap;
+    }
+}

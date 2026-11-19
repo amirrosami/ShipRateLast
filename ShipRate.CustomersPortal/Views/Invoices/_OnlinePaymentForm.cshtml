@@ -13,12 +13,12 @@
     var dir = isFa ? "rtl" : "ltr";
 }
 
-            <div class="modal-header">
+            <div class="modal-header" dir="@dir">
     <h5 class="modal-title">@(isFa ? "پرداخت فاکتور ها" : "Pay Selected Invoices")</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body" dir="@dir">
                 <form id="paySelectedForm"
           hx-post="@Url.Action("CreatePayment", "Invoices")"
                       hx-target="#app-modal-content"
@@ -26,8 +26,8 @@
 
                     @Html.AntiForgeryToken()
         <div class="card" dir="@dir">
-            <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped mb-0  align-middle">
+            <div class="table-responsive finance-table-responsive">
+          <table class="table table-bordered table-hover table-striped mb-0 align-middle finance-data-table">
                         <thead>
                             <tr>
                             <th>@Localizer["InvoiceNo"]</th>

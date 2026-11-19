@@ -1,16 +1,20 @@
 ﻿@using ShipRate.Application.DTOs.Finance
+@using System.Globalization
 @model InvoiceEditVm
+@{
+    var dir = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
+}
 
 
 @* <div class="modal fade" id="invoiceModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
- *@            <div class="modal-header">
+ *@            <div class="modal-header" dir="@dir">
     <h5 class="modal-title">@(Model.Id.HasValue ? "Edit Invoice" : "New Invoice")</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <input type="hidden" asp-for="JobId" />
-<div class="modal-body">
+<div class="modal-body" dir="@dir">
     <div id="invoice-header-form-container">
         @await Html.PartialAsync("_InvoiceHeaderForm", Model)
     </div>

@@ -15,9 +15,9 @@
     ViewData["Title"] = "Invoices";
 }
 
-<div class="container-fluid py-3" dir="@dir">
+<div class="requests-page finance-page container-fluid py-3" dir="@dir">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 class="mb-0">@(isFa ? "مدیریت فاکتورها" : "Invoices Management")</h3>
+        <h3 class="mb-0 finance-page-title">@(isFa ? "مدیریت فاکتورها" : "Invoices Management")</h3>
         
         @* <button type="button"
                 class="btn btn-outline-success"
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<div id="invoiceitems-list-container">
+<div id="invoiceitems-list-container" class="requests-page finance-page mt-4">
 
 </div>
 
@@ -67,4 +67,10 @@
 
 @section Scripts {
     <script src="~/js/invoices.js"></script>
+}
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/service-requests.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/finance-pages.css" asp-append-version="true" />
 }
