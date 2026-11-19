@@ -1,0 +1,137 @@
+/* Dashboard only. Logical spacing follows the portal language direction. */
+.shipping-overview {
+    --ink: #163744;
+    --muted: #4d6872;
+    --line: #d7e4e7;
+    --teal: #096761;
+    display: grid;
+    gap: 1.25rem;
+    max-width: 96rem;
+    margin-inline: auto;
+    color: var(--ink);
+}
+.shipping-overview .overview-banner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(1.35rem, 3vw, 2.75rem);
+    border-radius: 1.25rem;
+    color: white;
+    background: linear-gradient(110deg, #123545 12%, #10555b 76%, #11636b);
+}
+.shipping-overview .overview-banner::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset-block-start: -7rem;
+    inset-inline-end: -8rem;
+    width: 24rem;
+    height: 24rem;
+    border: 1px solid rgba(182, 240, 220, .16);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2rem rgba(182,240,220,.045), 0 0 0 5rem rgba(182,240,220,.04);
+}
+.shipping-overview .hero-badge { color: #aeead8; font-weight: 600; }
+.shipping-overview .hero-badge i { margin-inline-end: .35rem; }
+.shipping-overview .overview-banner h2 {
+    margin-block: .6rem .35rem;
+    color: white;
+    font-size: clamp(1.45rem, 2.6vw, 2.35rem);
+    line-height: 1.35;
+}
+.shipping-overview .overview-banner p { margin: 0; color: #dcefee; max-width: 68ch; }
+.shipping-overview .hero-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-block-start: 1.2rem; }
+.shipping-overview .hero-actions .btn {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    border-radius: .6rem;
+    padding: .6rem 1rem;
+    font-weight: 600;
+}
+.shipping-overview .hero-actions .btn-primary { background: #bcebd7; border-color: #bcebd7; color: #123f39; }
+.shipping-overview .hero-actions .btn-outline { background: #164951; color: white; border: 1px solid #85afb0; }
+.shipping-overview .hero-actions .btn-primary:hover { background: #def8ec; color: #123f39; }
+.shipping-overview .hero-actions .btn-outline:hover { background: #25606a; }
+.shipping-overview a:focus-visible { outline: 3px solid #3487ac; outline-offset: 3px; }
+.shipping-overview .hero-actions a:focus-visible { outline-color: white; }
+
+.shipping-overview .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .85rem;
+}
+.shipping-overview .overview-stat,
+.shipping-overview .overview-panel {
+    min-width: 0;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(23, 58, 69, .055);
+}
+.shipping-overview .overview-stat {
+    --accent: #12655d;
+    --tint: #e0f4eb;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .8rem;
+    padding: 1.1rem;
+    border-block-start: 3px solid var(--accent);
+}
+.shipping-overview .overview-stat:nth-child(2) { --accent: #275e89; --tint: #e5eff9; }
+.shipping-overview .overview-stat:nth-child(3) { --accent: #805414; --tint: #fbefd6; }
+.shipping-overview .overview-stat:nth-child(4) { --accent: #624a85; --tint: #f0eaf7; }
+.shipping-overview .stat-icon {
+    display: grid;
+    place-items: center;
+    width: 2.65rem;
+    height: 2.65rem;
+    border-radius: .8rem;
+    background: var(--tint);
+    color: var(--accent);
+}
+.shipping-overview .overview-stat h3 { margin: 0; font-size: 1.8rem; font-variant-numeric: tabular-nums; color: var(--ink); }
+.shipping-overview .overview-stat p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.shipping-overview .overview-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(15rem, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+.shipping-overview .overview-feed { grid-column: 2; grid-row: 1 / span 2; }
+.shipping-overview .overview-panel { padding: clamp(.9rem, 2vw, 1.4rem); }
+.shipping-overview .overview-heading { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; margin-block-end: 1rem; }
+.shipping-overview .overview-heading h3 { margin: 0; font-size: 1.1rem; font-weight: 700; }
+.shipping-overview .overview-heading a { color: var(--teal); font-size: .9rem; text-underline-offset: .2em; }
+.shipping-overview .overview-table { width: 100%; text-align: start; border-collapse: collapse; }
+.shipping-overview .overview-table :is(th, td) { padding: .75rem .65rem; text-align: start; vertical-align: middle; }
+.shipping-overview .overview-table th { background: #edf4f4; color: #385960; font-size: .85rem; white-space: nowrap; }
+.shipping-overview .overview-table tbody tr + tr { border-block-start: 1px solid var(--line); }
+.shipping-overview .overview-table tbody tr:hover { background: #f6faf9; }
+.shipping-overview .status-pill { display: inline-block; border-radius: 1rem; padding: .2rem .65rem; background: #e9f0f3; color: #355866; font-size: .85rem; }
+.shipping-overview .notification-item {
+    display: grid;
+    grid-template-columns: .65rem minmax(0, 1fr);
+    gap: .7rem;
+    padding-block: .85rem;
+    overflow-wrap: anywhere;
+}
+.shipping-overview .notification-item + .notification-item { border-block-start: 1px solid var(--line); }
+.shipping-overview .notification-item .dot { margin-block-start: .55rem; width: .55rem; height: .55rem; border-radius: 50%; background: #248275; }
+.shipping-overview .notification-item small { display: block; margin-block: .15rem; font-variant-numeric: tabular-nums; }
+.shipping-overview .notification-item :is(p, small), .shipping-overview .overview-empty { color: var(--muted); }
+.shipping-overview .notification-item p { margin: 0; }
+.shipping-overview .overview-empty { padding-block: 1rem; margin: 0; }
+
+@media (max-width: 1150px) {
+    .shipping-overview .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .shipping-overview .overview-grid { grid-template-columns: minmax(0, 1fr); }
+    .shipping-overview .overview-feed { grid-area: auto; }
+}
+@media (max-width: 480px) {
+    .shipping-overview .stats-grid { gap: .6rem; }
+    .shipping-overview .overview-stat { padding: .85rem; gap: .5rem; }
+    .shipping-overview .overview-table :is(th, td) { padding: .55rem .4rem; }
+}
