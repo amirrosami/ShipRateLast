@@ -1,0 +1,200 @@
+/* STA navy/orange theme for the Commitments / Download Forms page. */
+.commitments-page {
+    color: var(--sta-navy);
+}
+
+.commitments-page .commitments-hero {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+    color: #fff;
+    background: linear-gradient(120deg, var(--sta-navy), var(--sta-navy-light));
+    border: 1px solid var(--sta-navy-light);
+    border-bottom: 3px solid var(--sta-orange);
+    border-radius: .9rem;
+    box-shadow: 0 8px 24px rgb(20 42 74 / 12%);
+}
+
+.commitments-page .commitments-hero-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    color: var(--sta-navy);
+    background: var(--sta-orange);
+    border-radius: .8rem;
+    font-size: 1.55rem;
+}
+
+.commitments-page .commitments-page-title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.commitments-page .commitments-hero-caption {
+    color: #dce6f2;
+    font-size: .82rem;
+}
+
+.commitments-page .commitments-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.8rem;
+    min-height: 1.5rem;
+    padding: .1rem .55rem;
+    color: var(--sta-navy);
+    background: #fff;
+    border-radius: 999px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.commitments-page .commitments-grid {
+    align-items: stretch;
+}
+
+.commitments-page .commitment-card {
+    overflow: hidden;
+    border: 1px solid #d5deeb;
+    border-radius: .85rem;
+    box-shadow: 0 4px 18px rgb(20 42 74 / 5%);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.commitments-page .commitment-card:hover {
+    transform: translateY(-3px);
+    border-color: #e8a06d;
+    box-shadow: 0 10px 26px rgb(20 42 74 / 10%);
+}
+
+.commitments-page .commitment-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 190px;
+    padding: 1.15rem;
+}
+
+.commitments-page[dir="rtl"] .commitment-card .card-body {
+    align-items: stretch;
+}
+
+.commitments-page .commitment-file-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: .9rem;
+    color: var(--sta-navy);
+    background: var(--sta-orange-soft);
+    border: 1px solid #f4c29f;
+    border-radius: .7rem;
+    font-size: 1.25rem;
+}
+
+.commitments-page .commitment-file-title {
+    margin-bottom: .5rem;
+    color: var(--sta-navy);
+    font-size: .98rem;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.commitments-page .commitment-file-description {
+    color: #50617a;
+    font-size: .84rem;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.commitments-page .commitment-file-date {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .35rem;
+    margin-top: auto;
+    padding-top: .75rem;
+    color: #50617a;
+    font-size: .78rem;
+    border-top: 1px solid #e4eaf2;
+    width: 100%;
+}
+
+.commitments-page .commitment-file-date i {
+    color: var(--sta-orange-ink);
+}
+
+.commitments-page .commitment-date-label {
+    color: var(--sta-navy);
+    font-weight: 600;
+}
+
+.commitments-page .commitment-card-footer {
+    padding: .85rem 1.15rem;
+    background: #f5f7fb;
+    border-top: 1px solid #e4eaf2;
+}
+
+.commitments-page .commitment-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 40px;
+    font-size: .84rem;
+    font-weight: 700;
+}
+
+.commitments-page .commitments-empty-state {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: 1.1rem 1.2rem;
+    color: var(--sta-navy);
+    background: #f5f7fb;
+    border: 1px solid #d5deeb;
+    border-radius: .8rem;
+}
+
+.commitments-page .commitments-empty-state i {
+    color: var(--sta-orange-ink);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 575.98px) {
+    .commitments-page .commitments-hero {
+        gap: .8rem;
+        padding: 1rem;
+    }
+
+    .commitments-page .commitments-hero-icon {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+    }
+
+    .commitments-page .commitments-page-title {
+        font-size: 1.05rem;
+    }
+
+    .commitments-page .commitment-card .card-body {
+        min-height: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .commitments-page .commitment-card {
+        transition: none;
+    }
+
+    .commitments-page .commitment-card:hover {
+        transform: none;
+    }
+}
