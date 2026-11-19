@@ -48,7 +48,10 @@ html[lang="fa"] button {
     position: sticky;
     top: 0;
     height: 100vh;
-    transition: all .3s ease;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    transition: inset-inline-start .3s ease;
     z-index: 1040;
 }
 
@@ -140,7 +143,7 @@ html[lang="fa"] button {
         position: fixed;
         inset-inline-start: -280px;
         top: 0;
-        height: 100vh;
+        padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
     }
 
         .portal-sidebar.open {
